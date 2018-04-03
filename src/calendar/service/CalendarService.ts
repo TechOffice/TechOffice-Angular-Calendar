@@ -2,7 +2,6 @@ import { CalendarDate } from './../model/CalendarDate';
 import { CalendarWeek } from './../model/CalendarWeek';
 import { Injectable } from "@angular/core";
 import * as moment from "moment";
-import { CalendarWeek } from "../model/CalendarWeek";
 
 /**
  * Calendar Service
