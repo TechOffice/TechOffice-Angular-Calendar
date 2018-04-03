@@ -5,7 +5,7 @@ export class CalendarDate {
 
     private date: Date;
 
-    constructor(date: Date){
+    constructor(date?: Date){
         this.date= date;
     }
 
