@@ -82,7 +82,7 @@ export class CalendarService {
      * Get Day of Week with the specified date
      * 
      * @param date 
-     * @return day of week
+     * @return day of week (range from 0 to 6) Sunday: 0, Monday: 1, Tuesday: 1 ... Saturday: 6 
      */
     getDayOfWeek(date: Date): number{
         var dateMoment = moment(date);
@@ -137,4 +137,3 @@ export class CalendarService {
         return dateMoment.toDate();
     }
 }
-
