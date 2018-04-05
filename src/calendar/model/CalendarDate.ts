@@ -23,4 +23,8 @@ export class CalendarDate {
         return this.sameMonthInd;
     }
 
+    public toString(): string{
+        return this.date.toString();
+    }
+
 }
