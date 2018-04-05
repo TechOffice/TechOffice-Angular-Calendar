@@ -4,9 +4,11 @@ import * as moment from 'moment';
 export class CalendarDate {
 
     private date: Date;
+    private sameMonthInd: boolean;
 
-    constructor(date?: Date){
+    constructor(date: Date, sameMonthInd: boolean = true){
         this.date= date;
+        this.sameMonthInd = sameMonthInd;
     }
 
     public getDate() : Date{
@@ -15,6 +17,10 @@ export class CalendarDate {
 
     public getDayInMonth() : number{
         return moment(this.date).date();
+    }
+
+    public isSameMonth(): boolean {
+        return this.sameMonthInd;
     }
 
 }

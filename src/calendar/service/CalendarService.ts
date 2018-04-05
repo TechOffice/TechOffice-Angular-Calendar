@@ -33,7 +33,9 @@ export class CalendarService {
                 calendarWeek.push(new CalendarDate(date));
             }else {
                 var missingDays = this.getDayOfWeek(date) - startingDayOfWeek;
-                while (missingDays > 1){
+                while (missingDays > 0){
+                    var missingDate: Date = this.getPreviousDate(date, missingDays);
+                    calendarWeek.push(new CalendarDate(missingDate, false));
                     missingDays--;
                 }
                 calendarWeek.push(new CalendarDate(date));
