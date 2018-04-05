@@ -7,6 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
     selector: "monthly-calendar",
     template: `
         <div>
+            <monthly-header [selectedDate]="selectedDate"></monthly-header>
+            {{selectedDate}}
             <ng-container *ngFor="let calendarWeek of calendarWeeks">
                 <monthly-week [calendarWeek]="calendarWeek"></monthly-week>
             </ng-container>

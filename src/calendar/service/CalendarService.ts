@@ -102,6 +102,15 @@ export class CalendarService {
     }
 
     /**
+     * Get Year 
+     * @param date 
+     */
+    getYear(date: Date): number {
+        var dateMoment = moment(date);
+        return dateMoment.year();
+    }
+
+    /**
      * Get Next Date
      * 
      * @param date 
@@ -112,4 +121,17 @@ export class CalendarService {
         dateMoment.add(1, 'days');
         return dateMoment.toDate();
     }
+
+    getPreviousMonth(date: Date): Date{
+        var dateMoment = moment(date);
+        dateMoment.subtract(1, 'month');
+        return dateMoment.toDate();
+    }
+
+    getNextMonth(date: Date): Date{
+        var dateMoment = moment(date);
+        dateMoment.add(1, 'month');
+        return dateMoment.toDate();
+    }
 }
+

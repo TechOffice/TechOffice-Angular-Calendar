@@ -7,15 +7,22 @@ import MonthlyWeekComponent from './calendar/component/monthly/MonthlyWeekCompon
 import MonthlyDayComponent from './calendar/component/monthly/MonthlyDayComponent';
 import { CalendarService } from './calendar/service/CalendarService';
 import MonthlyCalendarComponent from './calendar/component/MonthlyCalendarComponent';
+import MonthlyHeaderComponent from './calendar/component/monthly/MonthlyHeaderComponent';
+import { MonthPipe } from './calendar/pipe/MonthPipe';
 
 
 @NgModule({
     declarations: [
+      // Components
       AppComponent,
       CalendarComponent,
       MonthlyCalendarComponent,
+      MonthlyHeaderComponent,
       MonthlyWeekComponent,
-      MonthlyDayComponent
+      MonthlyDayComponent,
+
+      // Pipes
+      MonthPipe
     ],
     providers: [
       CalendarService
