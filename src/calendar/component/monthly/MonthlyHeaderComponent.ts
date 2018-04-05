@@ -8,6 +8,9 @@ import { Component } from '@angular/core';
     selector: "monthly-header",
     template: `
         <div>
+            <b>Year</b>: {{monthlyCalendar.getSelectedDate() | year}}
+        </div>
+        <div>
             <b>Month</b>: {{monthlyCalendar.getSelectedDate() | month}} 
             <button (click)="previousMonth()">&lt;</button>
             <button (click)="nextMonth()">&gt;</button>

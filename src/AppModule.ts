@@ -9,6 +9,7 @@ import { CalendarService } from './calendar/service/CalendarService';
 import MonthlyCalendarComponent from './calendar/component/MonthlyCalendarComponent';
 import MonthlyHeaderComponent from './calendar/component/monthly/MonthlyHeaderComponent';
 import { MonthPipe } from './calendar/pipe/MonthPipe';
+import { YearPipe } from './calendar/pipe/YearPipe';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { MonthPipe } from './calendar/pipe/MonthPipe';
       MonthlyDayComponent,
 
       // Pipes
-      MonthPipe
+      MonthPipe,
+      YearPipe
     ],
     providers: [
       CalendarService
