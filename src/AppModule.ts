@@ -6,12 +6,14 @@ import CalendarComponent from './calendar/component/CalendarComponent';
 import MonthlyWeekComponent from './calendar/component/monthly/MonthlyWeekComponent';
 import MonthlyDayComponent from './calendar/component/monthly/MonthlyDayComponent';
 import { CalendarService } from './calendar/service/CalendarService';
+import MonthlyCalendarComponent from './calendar/component/MonthlyCalendarComponent';
 
 
 @NgModule({
     declarations: [
       AppComponent,
       CalendarComponent,
+      MonthlyCalendarComponent,
       MonthlyWeekComponent,
       MonthlyDayComponent
     ],

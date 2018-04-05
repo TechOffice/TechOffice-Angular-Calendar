@@ -7,14 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
     selector: "calendar",
     template: `
         <div>
-            <ng-container *ngFor="let calendarWeek of calendarWeeks">
-                <monthly-week [calendarWeek]="calendarWeek"></monthly-week>
-            </ng-container>
+           <monthly-calendar></monthly-calendar>
         </div>
     `
 })
 export default class CalendarComponent implements OnInit{
-
 
     calendarWeeks: CalendarWeek[];
 

@@ -90,6 +90,18 @@ export class CalendarService {
     }
 
     /**
+     * Get Month
+     * @param date 
+     * 
+     * The month retrieved by MomentJs would be from 0 - 11.
+     * In this method, it would return acutal month which range is from 1 - 12.
+     */
+    getMonth(date: Date): number {
+        var dateMoment = moment(date);
+        return dateMoment.month() + 1;
+    }
+
+    /**
      * Get Next Date
      * 
      * @param date 
