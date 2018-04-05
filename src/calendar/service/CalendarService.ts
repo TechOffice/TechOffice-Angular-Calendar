@@ -97,8 +97,11 @@ export class CalendarService {
      * In this method, it would return acutal month which range is from 1 - 12.
      */
     getMonth(date: Date): number {
-        var dateMoment = moment(date);
-        return dateMoment.month() + 1;
+        if (date != null){
+            var dateMoment = moment(date);
+            return dateMoment.month() + 1;
+        }
+        return null;
     }
 
     /**

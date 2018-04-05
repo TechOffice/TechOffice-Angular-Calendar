@@ -1,3 +1,4 @@
+import { MonthlyCalendar } from './../model/MonthlyCalendar';
 import { CalendarService } from './../service/CalendarService';
 import { CalendarWeek } from './../model/CalendarWeek';
 import { CalendarDate } from './../model/CalendarDate';
@@ -7,9 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
     selector: "monthly-calendar",
     template: `
         <div>
-            <monthly-header [selectedDate]="selectedDate"></monthly-header>
-            {{selectedDate}}
-            <ng-container *ngFor="let calendarWeek of calendarWeeks">
+            <monthly-header [monthlyCalendar]="monthlyCalendar"></monthly-header>
+            <ng-container *ngFor="let calendarWeek of monthlyCalendar.getCalendarWeeks()">
                 <monthly-week [calendarWeek]="calendarWeek"></monthly-week>
             </ng-container>
         </div>
@@ -17,14 +17,14 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export default class MonthlyCalendarComponent implements OnInit{
 
-    selectedDate: Date;
-    calendarWeeks: CalendarWeek[];
+    monthlyCalendar: MonthlyCalendar; 
 
     constructor(private calendarService: CalendarService){
-        this.selectedDate =  new Date();
     }
 
     ngOnInit(): void {
-        this.calendarWeeks = this.calendarService.getCalendarWeekArr(this.selectedDate);
+        var selectedDate =  new Date();
+        var calendarWeeks = this.calendarService.getCalendarWeekArr(selectedDate);
+        this.monthlyCalendar = new MonthlyCalendar(selectedDate, calendarWeeks);
     }
 }

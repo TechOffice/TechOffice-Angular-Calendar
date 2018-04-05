@@ -1,3 +1,4 @@
+import { MonthlyCalendar } from './../../model/MonthlyCalendar';
 import { CalendarService } from './../../service/CalendarService';
 import { Input } from '@angular/core';
 import { Component } from '@angular/core';
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
     selector: "monthly-header",
     template: `
         <div>
-            <b>Month</b>: {{selectedDate | month}} 
+            <b>Month</b>: {{monthlyCalendar.getSelectedDate() | month}} 
             <button (click)="previousMonth()">&lt;</button>
             <button (click)="nextMonth()">&gt;</button>
         </div>
@@ -16,17 +17,23 @@ import { Component } from '@angular/core';
 export default class MonthlyHeaderComponent {
 
     @Input()
-    selectedDate: Date;
+    monthlyCalendar: MonthlyCalendar;
 
     constructor(private calendarService: CalendarService){
         
     }
 
     previousMonth(){
-        this.selectedDate = this.calendarService.getPreviousMonth(this.selectedDate);
+        var date: Date = this.calendarService.getPreviousMonth(this.monthlyCalendar.getSelectedDate());
+        var calendarWeeks = this.calendarService.getCalendarWeekArr(date);
+        this.monthlyCalendar.setSelectedDate(date);
+        this.monthlyCalendar.setCalendarWeeks(calendarWeeks);
     }
 
     nextMonth(){
-        this.selectedDate = this.calendarService.getNextMonth(this.selectedDate);
+        var date: Date = this.calendarService.getNextMonth(this.monthlyCalendar.getSelectedDate());
+        var calendarWeeks = this.calendarService.getCalendarWeekArr(date);
+        this.monthlyCalendar.setSelectedDate(date);
+        this.monthlyCalendar.setCalendarWeeks(calendarWeeks);
     }
 }
