@@ -16,6 +16,7 @@ export class CalendarService {
      * @return Calendar Week Array 
      */
     getCalendarWeekArr(date: Date): CalendarWeek[]{
+        let startingDayOfWeek = 0; // Sunday
         let calendarWeeks: CalendarWeek[] = [];
         let calendarWeek: CalendarWeek = null;
         let dateArr: Date[]  = this.getDateArrInMonth(date);
@@ -23,11 +24,21 @@ export class CalendarService {
             var date = dateArr[i];
             if (calendarWeek == null){
                 calendarWeek = new CalendarWeek();
-            }else if (this.getDayOfWeek(date) == 0 ){
+            }else if (this.getDayOfWeek(date) == startingDayOfWeek ){
                 calendarWeeks.push(calendarWeek);
                 calendarWeek = new CalendarWeek();
             }
-            calendarWeek.push(new CalendarDate(date));
+            if (calendarWeek.size() != 0 
+                    || this.getDayOfWeek(date) == startingDayOfWeek ){
+                calendarWeek.push(new CalendarDate(date));
+            }else {
+                var missingDays = this.getDayOfWeek(date) - startingDayOfWeek;
+                while (missingDays > 1){
+                    missingDays--;
+                }
+                calendarWeek.push(new CalendarDate(date));
+            }
+            
         }
         if (calendarWeek != null){
             calendarWeeks.push(calendarWeek);
@@ -91,7 +102,9 @@ export class CalendarService {
 
     /**
      * Get Month
+     * 
      * @param date 
+     * @return month
      * 
      * The month retrieved by MomentJs would be from 0 - 11.
      * In this method, it would return acutal month which range is from 1 - 12.
@@ -107,6 +120,7 @@ export class CalendarService {
     /**
      * Get Year 
      * @param date 
+     * @return year
      */
     getYear(date: Date): number {
         var dateMoment = moment(date);
@@ -114,26 +128,53 @@ export class CalendarService {
     }
 
     /**
+     * Get Previous Date
+     * @param date 
+     * @param days (default 1 if null)
+     * @return previous date
+     */
+    getPreviousDate(date: Date, days: number = 1): Date{
+        var dateMoment = moment(date).clone();
+        dateMoment.subtract(days, 'days');
+        return dateMoment.toDate();
+    }
+
+    /**
      * Get Next Date
      * 
      * @param date 
+     * @param days (default 1 if null)
+     * 
      * @return next date
      */
-    getNextDate(date: Date): Date {
-        var dateMoment = moment(date);
+    getNextDate(date: Date, days: number = 1): Date {
+        var dateMoment = moment(date).clone();
         dateMoment.add(1, 'days');
         return dateMoment.toDate();
     }
 
-    getPreviousMonth(date: Date): Date{
-        var dateMoment = moment(date);
-        dateMoment.subtract(1, 'month');
+    /**
+     * Get Previous Date
+     * @param date 
+     * @param months (default 1 if null)
+     * @return previous date
+     */
+    getPreviousMonth(date: Date, months: number = 1): Date{
+        var dateMoment = moment(date).clone();
+        dateMoment.subtract(months, 'months');
         return dateMoment.toDate();
     }
 
-    getNextMonth(date: Date): Date{
-        var dateMoment = moment(date);
-        dateMoment.add(1, 'month');
+    /**
+     * Get Next Month
+     * @param date 
+     * @param month (default 1 if null)
+     * 
+     * @return next month 
+     */
+    getNextMonth(date: Date, months: number = 1): Date{
+        var dateMoment = moment(date).clone();
+        dateMoment.add(months, 'months');
         return dateMoment.toDate();
     }
 }

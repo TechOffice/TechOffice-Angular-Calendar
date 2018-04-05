@@ -19,5 +19,9 @@ export class CalendarWeek{
     public push(calendarDate: CalendarDate): void{
         this.calendarDates.push(calendarDate);
     }
+
+    public size(): number{
+        return this.calendarDates.length;
+    }
 }
 
