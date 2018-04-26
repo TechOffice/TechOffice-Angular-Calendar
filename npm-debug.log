@@ -1,0 +1,36 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'D:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'D:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'run',
+1 verbose cli   'watch' ]
+2 info using npm@3.10.10
+3 info using node@v6.10.3
+4 verbose run-script [ 'prewatch', 'watch', 'postwatch' ]
+5 info lifecycle techoffice_angular_calendar@1.0.0~prewatch: techoffice_angular_calendar@1.0.0
+6 silly lifecycle techoffice_angular_calendar@1.0.0~prewatch: no script for prewatch, continuing
+7 info lifecycle techoffice_angular_calendar@1.0.0~watch: techoffice_angular_calendar@1.0.0
+8 verbose lifecycle techoffice_angular_calendar@1.0.0~watch: unsafe-perm in lifecycle true
+9 verbose lifecycle techoffice_angular_calendar@1.0.0~watch: PATH: D:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;c:\Users\panwaicheng\git_workspace\TechOffice-Angular-Calendar\node_modules\.bin;C:\Program Files\HP_Fortify\HP_Fortify_SCA_and_Apps_4.42\bin;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\ProgramData\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\Program Files (x86)\Enterprise Vault\EVClient\;D:\Program Files\nodejs\;C:\Program Files\TortoiseSVN\bin;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Users\panwaicheng\AppData\Local\Programs\Python\Launcher\;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Enterprise Vault\EVClient\;D:\Program Files\nodejs\;D:\Software\apache-maven-3.5.0\bin;C:\Users\panwaicheng\AppData\Roaming\npm;D:\Software\python-3.5.4-embed-win32;D:\Software\python-3.5.4-embed-win32\Scripts;C:\Program Files\Java\jdk1.6.0_45\bin;D:\Program Files\Heroku\bin;D:\Software\gradle-4.5\bin;D:\Software\Apache-Subversion-1.9.7\bin;D:\Software\dotnet-sdk-2.1.4-win-x64;C:\Windows\Microsoft.NET\Framework\v4.0.30319;C:\cygwin64\bin;D:\Software\apache-ant-1.10.1\bin;D:\Software\BossTempalteGenerator;D:\Software\PortableGit\bin
+10 verbose lifecycle techoffice_angular_calendar@1.0.0~watch: CWD: c:\Users\panwaicheng\git_workspace\TechOffice-Angular-Calendar
+11 silly lifecycle techoffice_angular_calendar@1.0.0~watch: Args: [ '/d /s /c', 'webpack --progress --colors --watch' ]
+12 verbose stack Error: kill ENOSYS
+12 verbose stack     at exports._errnoException (util.js:1018:11)
+12 verbose stack     at process.kill (internal/process.js:190:13)
+12 verbose stack     at process.listener (D:\Program Files\nodejs\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:86:15)
+12 verbose stack     at emitNone (events.js:91:20)
+12 verbose stack     at process.emit (events.js:185:7)
+12 verbose stack     at processEmit (D:\Program Files\nodejs\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:146:32)
+12 verbose stack     at processEmit (D:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:146:32)
+12 verbose stack     at Signal.wrap.onsignal (internal/process.js:217:44)
+13 verbose cwd c:\Users\panwaicheng\git_workspace\TechOffice-Angular-Calendar
+14 error Windows_NT 6.1.7601
+15 error argv "D:\\Program Files\\nodejs\\node.exe" "D:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "run" "watch"
+16 error node v6.10.3
+17 error npm  v3.10.10
+18 error code ENOSYS
+19 error errno ENOSYS
+20 error syscall kill
+21 error kill ENOSYS
+22 error If you need help, you may report this error at:
+22 error     <https://github.com/npm/npm/issues>
+23 verbose exit [ 1, true ]

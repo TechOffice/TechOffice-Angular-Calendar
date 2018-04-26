@@ -7,7 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
     selector: "calendar",
     template: `
         <div>
-           <monthly-calendar></monthly-calendar>
+            
+            <monthly-calendar></monthly-calendar>
         </div>
     `
 })
