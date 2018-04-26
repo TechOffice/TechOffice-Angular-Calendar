@@ -7,13 +7,14 @@ import { Component, Input, OnInit } from '@angular/core';
     selector: "calendar",
     template: `
         <div>
-            
+            <input/>
             <monthly-calendar></monthly-calendar>
         </div>
     `
 })
 export default class CalendarComponent implements OnInit{
 
+    mode: string;
     calendarWeeks: CalendarWeek[];
 
     constructor(private calendarService: CalendarService){
