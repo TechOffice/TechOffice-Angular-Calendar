@@ -7,8 +7,9 @@ import { Component, Input, OnInit } from '@angular/core';
     selector: "calendar",
     template: `
         <div>
-            <input/>
-            <monthly-calendar></monthly-calendar>
+            <input [(ngModel)]="mode"/>
+            <monthly-calendar *ngIf="mode != 'day'"></monthly-calendar>
+            <daily-calendar *ngIf="mode == 'day'"></daily-calendar>
         </div>
     `
 })

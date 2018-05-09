@@ -1,3 +1,4 @@
+import { CalendarInterval } from './../model/CalendarInterval';
 import { CalendarDate } from './../model/CalendarDate';
 import { CalendarWeek } from './../model/CalendarWeek';
 import { Injectable } from "@angular/core";
@@ -8,6 +9,22 @@ import * as moment from "moment";
 export class CalendarService {
 
     constructor(){}
+
+
+    /**
+     * Get Calendar Interval Array
+     * @param date 
+     */
+    getCalendarInterval(date: Date): CalendarInterval[]{
+        let calendarIntervals: CalendarInterval[] = [];
+        let total: number = 1440;
+        let interval: number = 30;
+        let intervalCount: number = total / interval;
+        for (var i=0; i<intervalCount; i++){
+            
+        }
+        return calendarIntervals;
+    }
 
     /**
      * Get Calendar Week Array
